@@ -12,17 +12,17 @@
           <p class="text-red-600">{{ postsStore.error }}</p>
           <button 
             @click="retryFetch"
-            class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors"
+            class="mt-4 bg-red-600  rounded hover:bg-red-700 transition-colors text-white px-4 py-2"
           >
             Try Again
           </button>
         </div>
       </div>
-
-      <div v-else-if="postsStore.currentPost" class="max-w-3xl mx-auto">
+ 
+      <div v-else-if="postsStore.currentPost" class="mx-auto max-w-3xl ">
         <button 
           @click="goBack"
-          class="mb-6 flex items-center text-blue-600 hover:text-blue-800 transition-colors font-medium"
+          class="mb-6 text-blue-600 hover:text-blue-800 transition-colors font-medium flex items-center "
         >
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
@@ -30,17 +30,17 @@
           Back to Posts
         </button>
 
-        <div class="backdrop-blur-lg bg-white/40 border border-white/30 rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-lg">
+        <div class=" bg-white/40 border border-white/30 rounded-xl shadow-md p-6 transition-all backdrop-blur-lg duration-300 hover:shadow-lg">
           
-          <span class="inline-block bg-blue-100 text-blue-800 text-sm px-3 py-1 rounded-full mb-4">
+          <span class="px-3 inline-block bg-blue-100 text-blue-800 text-sm  py-1 rounded-full mb-4">
             Post #{{ postsStore.currentPost.id }}
           </span>
 
-          <h1 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4 leading-snug">
+          <h1 class=" sm:text-3xl font-semibold text-gray-900 mb-4 leading-snug">
             {{ postsStore.currentPost.title }}
           </h1>
 
-          <div class="mt-2 flex items-center text-sm text-gray-500 mb-4">
+          <div class="mt-2 flex items-center text-sm text-gray-500 mb-4 text-2xl">
             <span>User ID: {{ postsStore.currentPost.userId }}</span>
             <span class="mx-2">•</span>
             <span>{{ formatDate(new Date()) }}</span>
